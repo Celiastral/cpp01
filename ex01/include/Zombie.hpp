@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/07 14:27:35 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/07 14:37:01 by eandre           ###   ########.fr       */
+/*   Created: 2024/09/07 13:20:29 by eandre            #+#    #+#             */
+/*   Updated: 2024/09/07 14:52:49 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int	main(int argc, char **argv)
+#include <iomanip>
+
+class Zombie
 {
-	Zombie	*zombie;
+	public :
+		Zombie(std::string name);
+		Zombie(void);
+		~Zombie(void);
+		void	announce(void);
+		void	set_name(std::string name);
+	private :
+		std::string	name;
+};
 
-	if (argc > 1)
-		zombie = newZombie(argv[1]);
-	else
-		zombie = newZombie("Stephane");
-	zombie->Zombie::announce();
-	if (argc > 2)
-		randomChump(argv[2]);
-	else
-		randomChump("Random");
-	delete zombie;
-}
+Zombie* zombieHorde(int N, std::string name);
+
+#endif

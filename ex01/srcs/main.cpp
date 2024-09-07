@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 14:27:35 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/07 14:37:01 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/07 14:59:06 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 int	main(int argc, char **argv)
 {
-	Zombie	*zombie;
+	Zombie	*zombie_horde;
 
 	if (argc > 1)
-		zombie = newZombie(argv[1]);
+		zombie_horde = zombieHorde(10, argv[1]);
 	else
-		zombie = newZombie("Stephane");
-	zombie->Zombie::announce();
-	if (argc > 2)
-		randomChump(argv[2]);
-	else
-		randomChump("Random");
-	delete zombie;
+		zombie_horde = zombieHorde(10, "Stephane");
+	delete [] zombie_horde;
 }

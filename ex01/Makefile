@@ -1,4 +1,4 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = Moar_brainz
 
 C++ = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2
@@ -6,7 +6,7 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
 HEADERS = include/Zombie.hpp
-SRCS = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS = Zombie.cpp zombieHorde.cpp main.cpp
 
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o)) 
 
@@ -18,10 +18,10 @@ obj :
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME) : $(OBJS)
-	@echo -n "$(Red)Compilation de BraiiiiiiinnnzzzZ ..${NC}" && sleep 0.2
-	@echo -n "$(Red)\rCompilation de BraiiiiiiinnnzzzZ ...${NC}"
+	@echo -n "$(Red)Compilation de Moar_brainz ..${NC}" && sleep 0.2
+	@echo -n "$(Red)\rCompilation de Moar_brainz ...${NC}"
 	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
-	@echo "$(Green)\r------Compilation de BraiiiiiiinnnzzzZ finie !-------${NC}"
+	@echo "$(Green)\r------Compilation de Moar_brainz finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile $(HEADERS)
 	$(C++) $(CPPFLAGS) -c $< -o $@

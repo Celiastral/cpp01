@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/07 14:27:35 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/07 14:37:01 by eandre           ###   ########.fr       */
+/*   Created: 2024/09/07 14:41:48 by eandre            #+#    #+#             */
+/*   Updated: 2024/09/07 15:00:00 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Zombie.hpp"
 
-int	main(int argc, char **argv)
+Zombie* zombieHorde(int N, std::string name)
 {
-	Zombie	*zombie;
+	Zombie	*zombie_horde = new Zombie[N];
+	int		i;
 
-	if (argc > 1)
-		zombie = newZombie(argv[1]);
-	else
-		zombie = newZombie("Stephane");
-	zombie->Zombie::announce();
-	if (argc > 2)
-		randomChump(argv[2]);
-	else
-		randomChump("Random");
-	delete zombie;
+	i = 0;
+	while (i < N)
+	{
+		zombie_horde[i].set_name(name);
+		zombie_horde[i].announce();
+		i++;
+	}
+	return (zombie_horde);
 }

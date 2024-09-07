@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/07 14:27:35 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/07 14:37:01 by eandre           ###   ########.fr       */
+/*   Created: 2024/09/07 13:51:23 by eandre            #+#    #+#             */
+/*   Updated: 2024/09/07 14:51:22 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Zombie.hpp"
+#include <iostream>
 
-int	main(int argc, char **argv)
+Zombie::Zombie(void)
 {
-	Zombie	*zombie;
+}
 
-	if (argc > 1)
-		zombie = newZombie(argv[1]);
-	else
-		zombie = newZombie("Stephane");
-	zombie->Zombie::announce();
-	if (argc > 2)
-		randomChump(argv[2]);
-	else
-		randomChump("Random");
-	delete zombie;
+void	Zombie::set_name(std::string name)
+{
+	Zombie::name = name;
+}
+
+Zombie::Zombie (std::string name)
+{
+	Zombie::name = name;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << "Destructor called on: " << Zombie::name << std::endl;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << Zombie::name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
