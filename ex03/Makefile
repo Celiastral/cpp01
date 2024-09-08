@@ -1,7 +1,7 @@
 NAME = Unnecessary_violence
 
 C++ = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2 -g3
 
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
