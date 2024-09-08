@@ -17,14 +17,17 @@ all : obj $(NAME)
 obj :
 	@mkdir -p $(OBJS_DIR)
 
+subject_tests :
+	@$(MAKE) ADDITIONAL_FLAGS=-DSUBJECT
+
 $(NAME) : $(OBJS)
 	@echo -n "$(Red)Compilation de Unnecessary_violence ..${NC}" && sleep 0.2
 	@echo -n "$(Red)\rCompilation de Unnecessary_violence ...${NC}"
-	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
+	$(C++) $^ $(CPPFLAGS) $(ADDITIONAL_FLAGS) -o $(NAME) && sleep 0.1
 	@echo "$(Green)\r------Compilation de Unnecessary_violence finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile $(HEADERS)
-	$(C++) $(CPPFLAGS) -c $< -o $@
+	$(C++) $(CPPFLAGS) $(ADDITIONAL_FLAGS) -c $< -o $@
 
 clean :
 	@echo -n "$(Red).o en cours de suppression ...${NC}"
@@ -63,7 +66,7 @@ sus:
 	@echo "$(White)         ░▀▀█░█░█░▀▀█$(NC)"
 	@echo "$(White)         ░▀▀▀░▀▀▀░▀▀▀$(NC)"
 
-.PHONY : all clean fclean re obj print-% sus
+.PHONY : all clean fclean re obj print-% sus subject_tests
 
 # COLORS =======================================================================
 

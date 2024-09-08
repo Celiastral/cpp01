@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 17:15:02 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/08 18:13:48 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/08 19:30:37 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanA
 {
 	public :
-		HumanA(std::string name, Weapon &weapon);
+		HumanA(std::string _name, Weapon &_weapon);
 		~HumanA();
 		void	attack(void);
 	private :

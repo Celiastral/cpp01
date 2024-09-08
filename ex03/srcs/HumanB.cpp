@@ -6,21 +6,21 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 17:14:55 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/08 18:36:35 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/08 19:29:54 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name, Weapon &weapon) : weapon(&weapon), name(name)
+HumanB::HumanB(std::string name, Weapon &_weapon) : weapon(&_weapon), name(name)
 {
-	std::cout << "Constructor called for HumanB " << HumanB::name << " with " << HumanB::weapon->getType() << " as his weapon" << std::endl;
+	std::cout << "Constructor called for HumanB " << name << " with " << weapon->getType() << " as his weapon" << std::endl;
 }
 
-HumanB::HumanB(std::string name) : name(name)
+HumanB::HumanB(std::string _name) : weapon(NULL), name(_name)
 {
-	std::cout << "Constructor called for HumanB " << HumanB::name << " with no weapon" << std::endl;
+	std::cout << "Constructor called for HumanB " << name << " with no weapon" << std::endl;
 }
 
 HumanB::~HumanB()
@@ -29,6 +29,11 @@ HumanB::~HumanB()
 		std::cout << "Destructor called for HumanB " << name << " with " << weapon->getType() << " as his weapon" << std::endl;
 	else
 		std::cout << "Destructor called for HumanB " << name << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon &_weapon)
+{
+	weapon = &_weapon;
 }
 
 void	HumanB::attack(void)
