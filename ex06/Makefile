@@ -1,11 +1,12 @@
-NAME = Sed_is_for_losers
+NAME = Harl_filter
 
 C++ = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2 -g3
 
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
-SRCS = main.cpp
+HEADERS = include/Harl.hpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o)) 
 
@@ -17,10 +18,10 @@ obj :
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME) : $(OBJS)
-	@echo -n "$(Red)Compilation de Sed_is_for_losers ..${NC}" && sleep 0.2
-	@echo -n "$(Red)\rCompilation de Sed_is_for_losers ...${NC}"
+	@echo -n "$(Red)Compilation de Harl_filter ..${NC}" && sleep 0.2
+	@echo -n "$(Red)\rCompilation de Harl_filter ...${NC}"
 	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
-	@echo "$(Green)\r------Compilation de Sed_is_for_losers finie !-------${NC}"
+	@echo "$(Green)\r------Compilation de Harl_filter finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile
 	$(C++) $(CPPFLAGS) -c $< -o $@
