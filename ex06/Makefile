@@ -1,4 +1,4 @@
-NAME = Harl_filter
+NAME = harlFilter
 
 C++ = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2 -g3
@@ -18,10 +18,10 @@ obj :
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME) : $(OBJS)
-	@echo -n "$(Red)Compilation de Harl_filter ..${NC}" && sleep 0.2
-	@echo -n "$(Red)\rCompilation de Harl_filter ...${NC}"
+	@echo -n "$(Red)Compilation de harlFilter ..${NC}" && sleep 0.2
+	@echo -n "$(Red)\rCompilation de harlFilter ...${NC}"
 	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
-	@echo "$(Green)\r------Compilation de Harl_filter finie !-------${NC}"
+	@echo "$(Green)\r------Compilation de harlFilter finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile
 	$(C++) $(CPPFLAGS) -c $< -o $@
