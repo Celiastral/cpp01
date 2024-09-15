@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 17:14:59 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/08 19:03:46 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/15 17:04:45 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Weapon::Weapon()
 Weapon::~Weapon()
 {}
 
-std::string	Weapon::getType(void)
+std::string	const	&Weapon::getType(void) const
 {
 	return (type);
 }

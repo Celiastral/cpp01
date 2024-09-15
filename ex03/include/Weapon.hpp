@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 23:01:00 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/08 19:30:52 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/15 17:04:34 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Weapon
 		Weapon(std::string _type);
 		Weapon();
 		~Weapon();
-		std::string	getType(void);
-		void		setType(std::string _type);
+		std::string	const	&getType(void) const;
+		void				setType(std::string _type);
 	private :
 		std::string	type;
 };
