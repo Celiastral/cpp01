@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:20:29 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/08 17:29:47 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:30:50 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 	public :
-		Zombie(std::string name);
+		Zombie(const std::string &name);
 		~Zombie();
 		void	announce(void);
 	private :

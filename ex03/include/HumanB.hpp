@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 17:15:04 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/08 19:30:45 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:44:29 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanB
 {
 	public :
-		HumanB(std::string _name, Weapon &_weapon);
-		HumanB(std::string _name);
+		HumanB(const std::string &_name, Weapon &_weapon);
+		HumanB(const std::string &_name);
 		~HumanB();
 		void	attack(void);
 		void	setWeapon(Weapon &_weapon);

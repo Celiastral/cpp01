@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 14:41:48 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/07 15:00:00 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:29:05 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Zombie* zombieHorde(int N, std::string name)
 	while (i < N)
 	{
 		zombie_horde[i].set_name(name);
-		zombie_horde[i].announce();
 		i++;
 	}
 	return (zombie_horde);

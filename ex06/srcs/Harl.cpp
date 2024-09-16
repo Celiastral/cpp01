@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 18:49:50 by eandre            #+#    #+#             */
-/*   Updated: 2024/09/09 20:43:05 by eandre           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:54:23 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@
 void	Harl::complain(std::string level)
 {
 	int	i;
-	std::string	level_str[4];
-	void (Harl::*harl_funcs[4])();
-	harl_funcs[0] = &Harl::debug;
-	level_str[0] = "DEBUG";
-	harl_funcs[1] = &Harl::info;
-	level_str[1] = "INFO";
-	harl_funcs[2] = &Harl::warning;
-	level_str[2] = "WARNING";
-	harl_funcs[3] = &Harl::error;
-	level_str[3] = "ERROR";
+	std::string	level_str[4] = 
+	{
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+	void (Harl::*harl_funcs[4])() = 
+	{
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
 	i = 0;
 	while (i < 4)
 	{
@@ -36,22 +40,13 @@ void	Harl::complain(std::string level)
 	switch (i)
 	{
 		case DEBUG:
-			(this->*harl_funcs[i])();
-			(this->*harl_funcs[i + 1])();
-			(this->*harl_funcs[i + 2])();
-			(this->*harl_funcs[i + 3])();
-			break;
+			(this->*harl_funcs[0])();
 		case INFO:
-			(this->*harl_funcs[i])();
-			(this->*harl_funcs[i + 1])();
-			(this->*harl_funcs[i + 2])();
-			break;
+			(this->*harl_funcs[1])();
 		case WARNING:
-			(this->*harl_funcs[i])();
-			(this->*harl_funcs[i + 1])();
-			break;
+			(this->*harl_funcs[2])();
 		case ERROR:
-			(this->*harl_funcs[i])();
+			(this->*harl_funcs[3])();
 			break;
 		default :
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
